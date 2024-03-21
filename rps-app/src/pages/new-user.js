@@ -2,7 +2,7 @@ import Link from "next/link";
 import Head from "next/head";
 import Image from "next/image";
 import styles from "@/styles/Home.module.css";
-import { Container } from "../../compornents/LoginContainer";
+import { LoginContainer } from "../../compornents/loginContainer";
 import { useRouter } from "next/router";
 import { useState } from "react";
 
@@ -77,7 +77,7 @@ export default function Home() {
       </Head>
 
       <div class="wrapper">
-        <Container bgColor="blue">
+        <LoginContainer bgColor="blue">
           <form class="new-user" onSubmit={handleSubmit}>
             <div class="input-field">
               <input
@@ -107,7 +107,7 @@ export default function Home() {
               </button>
             </div>
           </form>
-        </Container>
+        </LoginContainer>
       </div>
     </>
   );

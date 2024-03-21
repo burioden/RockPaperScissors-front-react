@@ -1,8 +1,7 @@
 import Image from "next/image";
-import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 
-export function Container(props) {
+export function LoginContainer(props) {
 
   return (
     <div className={`container bg-${props.bgColor}`}>

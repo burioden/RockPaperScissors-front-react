@@ -2,7 +2,7 @@ import Link from "next/link";
 import Head from "next/head";
 import Image from "next/image";
 import styles from "@/styles/Home.module.css";
-import { Container } from "../../compornents/LoginContainer";
+import { LoginContainer } from "../../compornents/loginContainer";
 import { useRouter } from "next/router";
 
 export default function Home() {
@@ -21,7 +21,7 @@ export default function Home() {
       </Head>
 
       <div class="wrapper">
-        <Container bgColor="blue">
+        <LoginContainer bgColor="blue">
           <div class="text">
             <p className="logo">
               {email}
@@ -40,7 +40,7 @@ export default function Home() {
               </Link>
             </div>
           </div>
-        </Container>
+        </LoginContainer>
       </div>
     </>
   );

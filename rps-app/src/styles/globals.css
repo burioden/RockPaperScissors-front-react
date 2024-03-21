@@ -707,11 +707,11 @@ header.index img.logo {
 }
 
 .tutorial .description p {
-  width: 90%;
+  width: 80%;
   height: 230px;
   font-size: var(--font-size-m);
   letter-spacing: 0.05em;
-  text-align: left;
+  text-align: justify;
   margin: 1em auto 2em;
 }
 
