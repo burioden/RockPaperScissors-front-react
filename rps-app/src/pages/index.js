@@ -109,8 +109,6 @@ export default function Home() {
           </form>
         </LoginContainer>
       </div>
-
-      <script src="./js/script.js"></script>
     </>
   );
 }
