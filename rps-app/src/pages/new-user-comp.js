@@ -3,8 +3,11 @@ import Head from "next/head";
 import Image from "next/image";
 import styles from "@/styles/Home.module.css";
 import { Container } from "../../compornents/LoginContainer";
+import { useRouter } from "next/router";
 
 export default function Home() {
+  const router = useRouter();
+  const { email } = router.query;
   return (
     <>
       <Head>
@@ -18,24 +21,27 @@ export default function Home() {
       </Head>
 
       <div class="wrapper">
-        <Container bgColor="yellow">
-          <form class="login">
-            <div class="input-field">
-              <input placeholder="your@email.com" type="text" />
-              <input placeholder="password" type="text" />
-            </div>
+        <Container bgColor="blue">
+          <div class="text">
+            <p className="logo">
+              {email}
+              <br />
+              <br />
+              に、確認メールを送信しました
+              <br />
+              メールが届かない場合は、アドレス入力ミスの
+              <br />
+              可能性があるので、登録し直してください
+            </p>
 
             <div class="button-field">
-              <button class="blue-button">ログイン</button>
-              <Link href="/new-user">
-                <p class="text-button">新規登録</p>
+              <Link href="/tutorial" className="button blue-button">
+                はじめる
               </Link>
             </div>
-          </form>
+          </div>
         </Container>
       </div>
-
-      <script src="./js/script.js"></script>
     </>
   );
 }
