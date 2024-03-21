@@ -76,17 +76,17 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div class="wrapper">
+      <div className="wrapper">
         <LoginContainer bgColor="yellow">
-          <form class="login">
-            <div class="input-field">
+          <form className="login">
+            <div className="input-field">
               <input
                 placeholder="your@email.com"
                 type="text"
                 value={email}
                 onChange={handleChangeEmail}
               />
-              <div class="attention">
+              <div className="attention">
                 {showEmailNote && "※正しいメールアドレスを入力してください"}
               </div>
               <input
@@ -95,15 +95,15 @@ export default function Home() {
                 value={password}
                 onChange={handleChangePassword}
               />
-              <div class="attention">
+              <div className="attention">
                 {showPasswordNote && "※8文字以上の英数字混合で入力してください"}
               </div>
             </div>
 
-            <div class="button-field">
-              <button class="blue-button">ログイン</button>
+            <div className="button-field">
+              <button className="blue-button">ログイン</button>
               <Link href="/new-user">
-                <p class="text-button">新規登録</p>
+                <p className="text-button">新規登録</p>
               </Link>
             </div>
           </form>

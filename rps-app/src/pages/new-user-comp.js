@@ -20,9 +20,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div class="wrapper">
+      <div className="wrapper">
         <LoginContainer bgColor="blue">
-          <div class="text">
+          <div className="text">
             <p className="logo">
               {email}
               <br />
@@ -34,7 +34,7 @@ export default function Home() {
               可能性があるので、登録し直してください
             </p>
 
-            <div class="button-field">
+            <div className="button-field">
               <Link href="/tutorial" className="button blue-button">
                 はじめる
               </Link>
