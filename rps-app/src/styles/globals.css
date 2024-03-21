@@ -708,7 +708,6 @@ header.index img.logo {
 
 .tutorial .description p {
   width: 80%;
-  height: 230px;
   font-size: var(--font-size-m);
   letter-spacing: 0.05em;
   text-align: justify;
