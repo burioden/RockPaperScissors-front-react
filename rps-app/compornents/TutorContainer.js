@@ -2,8 +2,11 @@ import React from "react";
 import Image from "next/image";
 import styles from "@/styles/Home.module.css";
 import { useState } from "react";
+import { useRouter } from 'next/router';
 
 export function TutorContainer(props) {
+  const router = useRouter();
+
   const contents = [
     {
       title: "How To Use",
@@ -25,12 +28,21 @@ export function TutorContainer(props) {
       imageSrc: "/icon-bell.png",
       text: "通知を設定すると\n仲直り率が 50% アップします\n\nチュートリアルと、大切なこと登録後、設定画面から、通知設定をしましょう",
     },
+    {
+        title: "complete!!",
+        imageSrc: "/icon-clacker.png",
+        text: "通知を設定すると\n仲直り率が 50% アップします\n\nチュートリアルと、大切なこと登録後、設定画面から、通知設定をしましょう",
+      },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const goToNextContent = () => {
-    setCurrentIndex((prevIndex) => prevIndex + 1);
+    if (currentIndex === contents.length - 1) {
+      router.push('/tutorial-last'); // 最後のページの場合、/tutorial-end にリダイレクト
+    } else {
+      setCurrentIndex((prevIndex) => prevIndex + 1);
+    }
   };
 
   return (

@@ -128,6 +128,14 @@ a:hover {
   filter: brightness(1.2);
 }
 
+.text-blue {
+  color: var(--color-blue-purple);
+}
+
+.text-pink {
+  color: var(--color-pink);
+}
+
 .text-button {
   text-align: center;
   display: block;
@@ -698,6 +706,10 @@ header.index img.logo {
   text-transform: uppercase;
   margin-bottom: 0.5em;
   letter-spacing: 0.05em;
+}
+
+.tutorial .logo p.text-pink {
+    color: var(--color-pink);
 }
 
 .tutorial .description {
