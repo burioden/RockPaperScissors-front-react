@@ -4,6 +4,7 @@ import { MenuList } from "./menuList";
 import { HelpBox } from "./helpBox";
 
 export function EnqueteContainer(props) {
+
   const [helpBoxVisible, setHelpBoxVisible] = useState(false);
 
   const toggleHelpBox = () => {
