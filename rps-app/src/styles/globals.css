@@ -770,6 +770,64 @@ header.index img.logo {
   right: 1.2em;
 }
 
+.genkidama .circle {
+    position: absolute;
+    color: var(--color-white);
+    font-size: var(--font-size-s);
+    /* opacity: 0; */
+}
+
+.genkidama .circle.blue {
+    top: 510px;
+    left: 10px;
+}
+
+.genkidama .circle.green {
+    top: 10px;
+    right: 30px;
+}
+
+.genkidama .circle.orange {
+    top: 10px;
+    left: 40px;
+}
+
+.genkidama .circle.skyblue {
+    top: 110px;
+    left: 140px;
+}
+
+.genkidama .circle.purple {
+    bottom: 130px;
+    left: 130px;
+}
+
+.genkidama .circle.yellow {
+    top: 150px;
+    left: 10px;
+}
+
+.genkidama .circle.red {
+    top: 170px;
+    right: 15px;
+}
+
+.genkidama .circle.pink {
+    top: 520px;
+    right: 10px;
+}
+
+.genkidama .circle.gray {
+    bottom: 60px;
+    left: 30px;
+}
+
+.genkidama .circle.lightblue {
+    bottom: 50px;
+    right: 40px;
+}
+
+
 /* けんか ---------------------------------- */
 
 .conversation .head-text.first-step {
