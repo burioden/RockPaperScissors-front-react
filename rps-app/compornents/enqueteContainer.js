@@ -1,4 +1,5 @@
 import React from "react";
+import { MenuList } from "./menuList";
 
 export function EnqueteContainer(props) {
   const examples = [{ gender: "男性", age: "20代", principle: "お互いに干渉しすぎない" }, { gender: "女性", age: "20代", principle: "好意を定期的に伝える" }, { gender: "ノンバイナリー", age: "30代", principle: "感じたことを言語化して伝える" }, { gender: "男性", age: "20代", principle: "あいさつをする" }, { gender: "女性", age: "30代", principle: "自分の時間を大切にする" }, { gender: "男性", age: "20代", principle: "自分の言葉に責任を持つ" }];
@@ -40,26 +41,7 @@ export function EnqueteContainer(props) {
               <span>spanで囲うと青い文字</span>になる
             </p>
           </div>
-          <nav className="menu-field">
-            <div className="menu-button">
-              <img src="icon-menu.png" alt="Menu" />
-            </div>
-            <div className="menu-button">
-              <img src="icon-principle.png" alt="大切なものリスト" />
-            </div>
-            <div className="menu-button">
-              <img src="icon-conversation.png" alt="けんか" />
-            </div>
-            <div className="menu-button">
-              <img
-                src="icon-report-peacebird.png"
-                alt="仲直りレポート"
-              />
-            </div>
-            <div className="menu-button" id="help">
-              ？
-            </div>
-          </nav>
+          <MenuList />
         </div>
       </main>
     </div>
