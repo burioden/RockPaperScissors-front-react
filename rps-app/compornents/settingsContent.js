@@ -1,18 +1,21 @@
 import React from "react";
+
 import { useState } from "react";
 import { MenuList } from "./menuList";
 import { HelpBox } from "./helpBox";
-import Link from "next/link";
 
 export function SettingsContent(props) {
-  const contents = [{ name: "大切なことレポート", link: "./report" }, { name: "メール通知設定", link: "./mail-settings" }, { name: "チュートリアル", link: "./tutorial" }];
+
+  const contents = [{name:"大切なことレポート", link:"./report"}, {name:"メール通知設定", link: "./settings-mail"}, {name:"チュートリアル", link: "./tutorial"}];
   const [helpBoxVisible, setHelpBoxVisible] = useState(false);
+
   const toggleHelpBox = () => {
     setHelpBoxVisible((prevVisible) => !prevVisible);
   };
+
   return (
     <div className={`container bg-${props.bgColor}`}>
-      <main className="report">
+      <main className="setting">
         <div className="contents-wrapper">
           <div className="bg-rect">
             <div className="inner">
@@ -31,7 +34,9 @@ export function SettingsContent(props) {
             </div>
           </div>
           <HelpBox visible={helpBoxVisible}>
-            あああ
+            ・最大10文字
+            <br />
+            ・普段の呼び名がおすすめです
           </HelpBox>
           <MenuList toggleHelpBox={toggleHelpBox} />
         </div>
