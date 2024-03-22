@@ -4,6 +4,7 @@ import { useState } from "react";
 import { MenuList } from "../../compornents/menuList";
 import { HelpBox } from "../../compornents/helpBox";
 import { ReportBox } from "../../compornents/reportBox";
+import { Dialog } from "../../compornents/dialog";
 
 export default function Home() {
   const [helpBoxVisible, setHelpBoxVisible] = useState(false);
@@ -20,6 +21,11 @@ ReportBoxに渡したいデータ
 - タイトル title
 - 達成率（達成したもの / Todoの総数） progress
 
+遷移先のページ(report-description)に渡すデータ
+・タイトル
+・日付
+・達成率
+・詳細（もろもろ）
 
 
 */
@@ -48,7 +54,7 @@ ReportBoxに渡したいデータ
               <div className="bg-rect">
                 <div className="inner">
                   <ol>
-                    <Link href="/report/2024.02.02">{/* ここにリンクを設定 ページ動的に作るの・・・？*/}
+                    <Link href="/report-description">{/* ここにリンクを設定 ページ動的に作るの・・・？*/}
                       <ReportBox
                         date="2024.02.02"
                         title="おやつ多すぎるよ"
