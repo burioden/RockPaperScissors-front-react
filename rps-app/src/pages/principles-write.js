@@ -15,7 +15,7 @@ export default function Home() {
       </Head>
 
       <div className="wrapper">
-        <PrinciplesForm bgColor="blue"/>
+        <PrinciplesForm bgColor="yellow"/>
       </div>
     </>
   );

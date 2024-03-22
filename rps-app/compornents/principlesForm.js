@@ -1,49 +1,35 @@
-import React from "react";
+import React, { useState } from "react";
+import { MenuList } from "./menuList";
+import { HelpBox } from "./helpBox";
 
 export function PrinciplesForm(props) {
+  const [helpBoxVisible, setHelpBoxVisible] = useState(false);
+
+  const toggleHelpBox = () => {
+    setHelpBoxVisible((prevVisible) => !prevVisible);
+  };
+
   return (
     <div className={`container bg-${props.bgColor}`}>
-      <main className="report">
+      <main className="principle">
         <div className="contents-wrapper">
-          <div className="bg-rect">
+          <div className="bg-circle-small">
             <div className="inner">
-              <div className="box">
-                <p>{props.principle}について</p>
+              <p className="head-text">相手のお名前は？</p>
+              <div className="input-field">
+                <input type="text" placeholder="ぶりちゃん" />
+                <span className="san">さん</span>
               </div>
-              <div className="box">
-                <div className="text-area">
-                  <button className="white-button">つぎへ</button>
-                </div>
-              </div>
+              <div className="attention"></div>
+              <a className="button blue-button">決定</a>
             </div>
           </div>
-          <div className="bg-rect-small help-box" id="help-box">
-            <p>
-              ここに説明文
-              <br />
-              <span>spanで囲うと青い文字</span>になる
-            </p>
-          </div>
-          <nav className="menu-field">
-            <div className="menu-button">
-              <img src="icon-menu.png" alt="Menu" />
-            </div>
-            <div className="menu-button">
-              <img src="icon-principle.png" alt="大切なものリスト" />
-            </div>
-            <div className="menu-button">
-              <img src="icon-conversation.png" alt="けんか" />
-            </div>
-            <div className="menu-button">
-              <img
-                src="icon-report-peacebird.png"
-                alt="仲直りレポート"
-              />
-            </div>
-            <div className="menu-button" id="help">
-              ？
-            </div>
-          </nav>
+          <HelpBox visible={helpBoxVisible}>
+            ・最大10文字
+            <br />
+            ・普段の呼び名がおすすめです
+          </HelpBox>
+          <MenuList toggleHelpBox={toggleHelpBox} />
         </div>
       </main>
     </div>
