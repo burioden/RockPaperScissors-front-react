@@ -607,6 +607,8 @@ label {
     color: var(--color-blue-purple);
 }
 
+
+
 /* ログイン・新規登録 ---------------------------------- */
 
 header.index img.logo {
@@ -820,4 +822,17 @@ header.index img.logo {
 
 .setting .head-text {
     font-size: var(--font-size-l);
+}
+
+/* アンケート結果 */
+.bg-rect-small.white.box {
+  display: block;
+  position: static;
+  width: auto;
+  height: auto;
+  background: linear-gradient(
+      179.96deg,
+      rgba(255, 255, 255, 0.7),
+      rgba(255, 255, 255, 0.55)
+    );
 }
