@@ -29,10 +29,10 @@ export function TutorContainer(props) {
       text: "通知を設定すると\n仲直り率が 50% アップします\n\nチュートリアルと、大切なこと登録後、設定画面から、通知設定をしましょう",
     },
     {
-        title: "complete!!",
-        imageSrc: "/icon-clacker.png",
-        text: "通知を設定すると\n仲直り率が 50% アップします\n\nチュートリアルと、大切なこと登録後、設定画面から、通知設定をしましょう",
-      },
+      title: "complete",
+      imageSrc: "/icon-clacker.png",
+      text: "早速、あなたの「大切なこと」について深堀りしていきましょう",
+    }
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -70,7 +70,7 @@ export function TutorContainer(props) {
                     <span key={index} className={index === currentIndex ? "current" : ""}>●</span>
                   ))}
                 </div>
-                <a href="">skip</a>
+                <a href="#" onClick={() => setCurrentIndex(4)}>skip</a>
               </div>
             </div>
           </div>
