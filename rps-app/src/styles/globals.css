@@ -766,10 +766,6 @@ header.index img.logo {
   margin: 0;
 }
 
-.principle nav.menu-field {
-  right: 1.2em;
-}
-
 .genkidama .circle {
     position: absolute;
     color: var(--color-white);
@@ -896,6 +892,14 @@ header.index img.logo {
 
 .setting .head-text {
     font-size: var(--font-size-l);
+}
+
+.setting .bg-rect-small.white.list {
+    margin-bottom: 1em;
+}
+
+.setting .box {
+    margin: 0;
 }
 
 /* アンケート結果 */
