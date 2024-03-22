@@ -24,7 +24,7 @@ export function MenuList(props) {
           <img src="icon-report-peacebird.png" alt="仲直りレポート" />
         </div>
       </Link>
-      <div className="menu-button" id="help">
+      <div className="menu-button" id="help" onClick={props.toggleHelpBox}>
         ？
       </div>
     </nav>

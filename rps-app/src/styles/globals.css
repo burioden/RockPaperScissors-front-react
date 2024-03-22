@@ -111,7 +111,7 @@ main {
 
 /* @media (min-width: 527px) {
   .container {
-    width: 80%;
+    width: 100%;
   }
 } */
 
@@ -754,6 +754,10 @@ header.index img.logo {
   gap: 1em;
   justify-content: center;
   align-items: flex-end;
+  margin-bottom: 0.2em;
+}
+
+.principle .attention {
   margin-bottom: 1em;
 }
 
