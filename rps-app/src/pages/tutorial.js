@@ -17,7 +17,7 @@ export default function Home() {
       </Head>
 
       <div className="wrapper">
-        <TutorContainer bgColor="blue"/>
+        <TutorContainer/>
       </div>
     </>
   );
