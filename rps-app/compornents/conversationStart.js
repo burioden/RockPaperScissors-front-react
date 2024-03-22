@@ -1,13 +1,18 @@
 import React from "react";
+import { useState } from "react";
 import { MenuList } from "./menuList";
+import { HelpBox } from "./helpBox";
 
 export function ConversationStart(props) {
   const goToName = () => {
     router.push('/check-before-conversation'); // パートナーのニックネームを決めるページに移動
   };
-
   const goToMenu = () => {
     router.push('/menu'); // メニューページに移動
+  };
+  const [helpBoxVisible, setHelpBoxVisible] = useState(false);
+  const toggleHelpBox = () => {
+    setHelpBoxVisible((prevVisible) => !prevVisible);
   };
   return (
     <div className={`container bg-${props.bgColor}`}>
@@ -20,14 +25,10 @@ export function ConversationStart(props) {
               <button className="white-button" onClick={goToMenu}>後でやる</button>
             </div>
           </div>
-          <div className="bg-rect-small help-box" id="help-box">
-            <p>
-              ここに説明文
-              <br />
-              <span>spanで囲うと青い文字</span>になる
-            </p>
-          </div>
-          <MenuList />
+          <HelpBox visible={helpBoxVisible}>
+            あああ
+          </HelpBox>
+          <MenuList toggleHelpBox={toggleHelpBox} />
         </div>
       </main>
     </div>
