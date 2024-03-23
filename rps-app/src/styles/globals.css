@@ -82,7 +82,8 @@ main {
   padding-top: 40px;
 }
 
-.two-button-field button:first-child {
+.two-button-field button:first-child,
+.two-button-field .button:first-child {
   margin-bottom: 8px;
 }
 
@@ -333,10 +334,6 @@ label {
   transition: all 0.3s ease-in-out;
 }
 
-.bg-rect-small.help-box p {
-    width: 100%;
-}
-
 .help-box.on {
   visibility: visible;
   opacity: 1;
@@ -358,6 +355,7 @@ label {
   display: grid;
   place-items: center;
   text-align: center;
+  font-size: var(--font-size-s);
 }
 
 .circle.white {
@@ -833,10 +831,23 @@ header.index img.logo {
 .conversation .head-text.first-step {
   height: 178px;
   margin-bottom: 0;
+  padding-top: 2em;
 }
 
+.conversation p span {
+    color: var(--color-blue-purple);
+}
 
-/* まだ足すところがある */
+.conversation .bg-circle-small {
+    align-content: center;
+}
+
+.principle-box {
+    position: absolute;
+    top: 50px;
+    display: flex;
+    gap: 0.5em;
+}
 
 
 /* 仲直りレポート ---------------------------------- */
@@ -944,3 +955,5 @@ header.index img.logo {
     margin-bottom: 3em;
     font-size: var(--font-size-m);
 }
+
+

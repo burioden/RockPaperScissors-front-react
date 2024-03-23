@@ -7,7 +7,12 @@ import Link from "next/link";
 
 export function SettingsContent(props) {
 
-  const contents = [{name:"大切なことレポート", link:"./report"}, {name:"メール通知設定", link: "./settings-mail"}, {name:"チュートリアル", link: "./tutorial"}];
+  const contents = [
+    { name: "大切なことレポート", link: "./report" },
+    { name: "メール通知設定", link: "./settings-mail" },
+    { name: "チュートリアル", link: "./tutorial" },
+  ];
+
   const [helpBoxVisible, setHelpBoxVisible] = useState(false);
 
   const toggleHelpBox = () => {
@@ -28,9 +33,8 @@ export function SettingsContent(props) {
                         <p>{content.name}</p>
                       </div>
                     </Link>
-                  )
-                })
-                }
+                  );
+                })}
               </div>
             </div>
           </div>
