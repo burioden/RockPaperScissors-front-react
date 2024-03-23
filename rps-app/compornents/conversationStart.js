@@ -2,8 +2,10 @@ import React from "react";
 import { useState } from "react";
 import { MenuList } from "./menuList";
 import { HelpBox } from "./helpBox";
+import { useRouter } from 'next/router';
 
 export function ConversationStart(props) {
+  const router = useRouter();
   const goToName = () => {
     router.push('/check-before-conversation'); // パートナーのニックネームを決めるページに移動
   };

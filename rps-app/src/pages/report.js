@@ -13,6 +13,40 @@ export default function Home() {
     setHelpBoxVisible((prevVisible) => !prevVisible);
   };
 
+  const makeDate = (date_json) => {
+    const date = new Date(date_json);
+    return `${date.getFullYear()}.${(date.getMonth() + 1).toString().padStart(2, '0')}.${date.getDate().toString().padStart(2, '0')}`
+  };
+
+  const makeRate = (id) => {
+    const json_to_do = `[
+      {
+          "id": 1,
+          "todo": "カレンダーで約束を共有する",
+          "is_completed": false,
+          "report_id": 1,
+          "created_at": "2024-03-22T20:10:32.630Z",
+          "updated_at": "2024-03-22T20:10:32.630Z"
+      },
+      {
+          "id": 2,
+          "todo": "外食しちゃう",
+          "is_completed": false,
+          "report_id": 1,
+          "created_at": null,
+          "updated_at": null
+      }
+    ]`;
+    const parsed_to_do = JSON.parse(json_to_do);
+    let todoCompleted = 0
+    let todoSum = 0
+    parsed_to_do.forEach(to_do => {
+      todoSum++;
+      if (to_do.is_completed) todoCompleted++;
+    });
+    return (todoCompleted / todoSum) * 100;
+  }
+
   {
     /*
 
@@ -35,6 +69,27 @@ ReportBoxに渡したいデータ
   const todoSum = 10;
 
   const rate = (todoCompleted / todoSum) * 100;
+  const json = `[
+    {
+        "id": 3,
+        "title": "今日の晩御飯に関して",
+        "decision": null,
+        "todo_progress": null,
+        "user_id": 1,
+        "created_at": "2024-03-22T18:58:54.679Z",
+        "updated_at": "2024-03-22T18:58:54.679Z"
+    },
+    {
+        "id": 4,
+        "title": "今日のおやつに関して",
+        "decision": null,
+        "todo_progress": null,
+        "user_id": 1,
+        "created_at": "2024-03-22T19:06:17.482Z",
+        "updated_at": "2024-03-22T19:06:17.482Z"
+    }
+  ]`;
+  const parsed = JSON.parse(json);
 
   return (
     <>
@@ -54,13 +109,17 @@ ReportBoxに渡したいデータ
               <div className="bg-rect">
                 <div className="inner">
                   <ol>
-                    <Link href="/report-description">{/* ここにリンクを設定 ページ動的に作るの・・・？*/}
+                    {parsed.map((rep)=>{
+                      return (
+                        <Link href="/report-description" state={{id: rep.id}}>{/* ここにリンクを設定 ページ動的に作るの・・・？*/}
                       <ReportBox
-                        date="2024.02.02"
-                        title="おやつ多すぎるよ"
-                        progress={rate}
+                        date={makeDate(rep.created_at)}
+                        title={rep.title}
+                        progress={makeRate(rep.id)}
                       />
                     </Link>
+                      )
+                    })}
                   </ol>
                 </div>
               </div>
