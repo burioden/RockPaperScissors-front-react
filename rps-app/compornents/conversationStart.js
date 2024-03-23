@@ -17,13 +17,22 @@ export function ConversationStart(props) {
     props.setHelpBoxVisible((prevVisible) => !prevVisible);
   };
 
+  const json = `{
+    "id": 1,
+    "name": "あやりちゃん",
+    "user_id": 1,
+    "created_at": "2024-03-18T12:10:46.090Z",
+    "updated_at": "2024-03-18T12:10:46.090Z"
+  }`;
+  const parsed = JSON.parse(json);
+
   return (
     <div className={`container bg-${props.bgColor}`}>
       <main className="conversation">
         <div className="contents-wrapper">
           <div className="bg-circle-small">
             <p className="head-text first-step">
-              いま、あなたと○○さんは
+              いま、あなたと{parsed.name}さんは
               <br />
               <span>時間的・精神的</span>
               <br />
