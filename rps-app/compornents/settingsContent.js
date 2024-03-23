@@ -3,6 +3,7 @@ import React from "react";
 import { useState } from "react";
 import { MenuList } from "./menuList";
 import { HelpBox } from "./helpBox";
+import Link from "next/link";
 
 export function SettingsContent(props) {
 
