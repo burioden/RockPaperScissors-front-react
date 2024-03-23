@@ -4,7 +4,7 @@ import Image from "next/image";
 import styles from "@/styles/Home.module.css";
 import { LoginContainer } from "../../compornents/loginContainer";
 import { useRouter } from "next/router";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Home() {
   const router = useRouter();
@@ -24,12 +24,32 @@ export default function Home() {
       }
       if (!passwordValid) {
         setShowPasswordNote(true); // パスワードの形式が正しくない場合に注釈を表示
-        console.log("パスワードチェケ");
       }
       return;
     }
 
     // フォーム送信処理
+    const requestOptions = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ Name: "hogehoge" }),
+    };
+
+    const url = `https://rock-papper-scissors-api-silent-sun-7263.fly.dev/api/v1/auth?email=${email}&password=${password}&password_confirm=${password}&name=testuser`;
+
+    fetch(url, requestOptions)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        console.log("Success:", data);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
 
     // 次のページに推移し、入力値をクエリパラメーターとして渡す
     router.push({
@@ -52,7 +72,6 @@ export default function Home() {
   const isValidEmail = (email) => {
     // シンプルなメールアドレスの正規表現パターン
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    console.log("メールチェケ");
     return emailPattern.test(email);
   };
 
@@ -60,7 +79,6 @@ export default function Home() {
   const isValidPassword = (password) => {
     // 8文字以上の英語と数字の正規表現パターン
     const passwordPattern = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
-    console.log("パスワードチェケ");
     return passwordPattern.test(password);
   };
 
@@ -96,8 +114,7 @@ export default function Home() {
                 onChange={handleChangePassword}
               />
               <div className="attention">
-                {showPasswordNote &&
-                  "※8文字以上の英数字混合で入力してください"}
+                {showPasswordNote && "※8文字以上の英数字混合で入力してください"}
               </div>
             </div>
 
