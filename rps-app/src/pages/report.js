@@ -110,12 +110,14 @@ ReportBoxに渡したいデータ
                 <div className="inner">
                   <ol>
                     {parsed.map((rep)=>{
+                      const date = makeDate(rep.created_at);
+                      const rate = makeRate(rep.id);
                       return (
-                        <Link href="/report-description" state={{id: rep.id}}>{/* ここにリンクを設定 ページ動的に作るの・・・？*/}
+                        <Link href={{pathname: "/report-description/", query:{id: rep.id, date: date, title:rep.title, rate: rate}}}>
                       <ReportBox
-                        date={makeDate(rep.created_at)}
+                        date={date}
                         title={rep.title}
-                        progress={makeRate(rep.id)}
+                        progress={rate}
                       />
                     </Link>
                       )
