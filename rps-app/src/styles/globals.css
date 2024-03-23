@@ -956,4 +956,13 @@ header.index img.logo {
     font-size: var(--font-size-m);
 }
 
+/* 価値観リスト */
+.circle.small{
+  width:45px;
+  height:45px;
+}
 
+.bg-rect-small.xs.white.flex{
+  display: flex;
+  height: 90px;
+}
