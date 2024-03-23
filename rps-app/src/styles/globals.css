@@ -129,6 +129,10 @@ a:hover {
   filter: brightness(1.2);
 }
 
+.text-small {
+  font-size: var(--font-size-s);
+}
+
 .text-blue {
   color: var(--color-blue-purple);
 }
@@ -201,7 +205,7 @@ button.white-button-grass:hover, .button.white-button-grass:hover{
   filter: brightness(0.9);
 }
 
-.input-field input, select {
+.input-field input, select, textarea {
   display: block;
   width: 310px;
   height: 45px;
@@ -212,6 +216,13 @@ button.white-button-grass:hover, .button.white-button-grass:hover{
   font-size: 16px;
 }
 
+.input-field textarea {
+    height: 100px;
+    resize: none;
+    padding: 1em 1.5em;
+    font-size: var(--font-size-s);
+}
+
 .input-field input:last-child {
   margin-bottom: 0;
 }
@@ -220,7 +231,7 @@ input::placeholder {
   color: var(--color-lightgray);
 }
 
-input:focus, select:focus {
+input:focus, select:focus, textarea:focus {
   outline: none;
   background-color: #e5e9f8;
 }
@@ -768,6 +779,18 @@ header.index img.logo {
   margin: 0;
 }
 
+.principle.detail .input-field {
+    display: block;
+}
+
+.principle.detail .text {
+    text-align: center;
+}
+
+.principle.detail textarea {
+    margin-bottom: 2em;
+}
+
 .genkidama .circle {
     position: absolute;
     color: var(--color-white);
@@ -825,6 +848,28 @@ header.index img.logo {
     right: 40px;
 }
 
+.principle.detail .title {
+    position: absolute;
+    top: -104px;
+}
+
+.principle.detail .title .circle {
+    position: relative;
+    width: 208px;
+    height: 208px;
+}
+
+.principle.detail .title .circle p {
+    position: absolute;
+    top: 140px;
+    font-size: 16px;
+    letter-spacing: 0.25em;
+    width: 300px;
+}
+
+.principle.detail .bg-rect {
+    height: 70vh;
+}
 
 /* けんか ---------------------------------- */
 
